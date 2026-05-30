@@ -1,17 +1,22 @@
+import pingu from "../assets/pingu.jpg";
+
 function Inicio() {
   return (
     <section className="card">
-      <h2>Bem-vindo(a) ao Sistema de Treinos</h2>
+      <h2>Bem-vindo(a) ao Sistema de Cadastro de Treinos</h2>
 
-      <p>
-        Esta aplicação permite cadastrar exercícios, organizar treinos por dia da
-        semana e visualizar os dados de forma dinâmica.
+      <img
+        src={pingu}
+        alt="Pingu treinando"
+        className="imagem-inicio"
+      />
+
+      <p className="texto-inicio">
+        Esta aplicação permite cadastrar exercícios, organizar treinos por dia da semana e visualizar os dados de forma dinâmica.
       </p>
 
-      <p>
-        O projeto foi desenvolvido em React como continuação da prática anterior,
-        utilizando rotas, formulário controlado, estado compartilhado e consumo
-        de API REST.
+      <p className="texto-inicio">
+        Desenvolvido em React para a disciplina de Tecnologias Web referente a prática 3 e 4.
       </p>
     </section>
   );

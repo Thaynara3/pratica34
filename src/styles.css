@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --azul-principal: #1f4f82;
+  --azul-hover: #16395d;
+  --cinza-fundo: #f4f4f4;
+  --cinza-borda: #ddd;
+  --branco: #fff;
+  --erro: #b02a37;
+}
+
+body {
+  background-color: var(--cinza-fundo);
+  color: #222;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  text-align: center;
+  padding: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.menu a,
+.footer-text {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover,
+.footer-text:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  min-height: 70vh;
+  margin: 30px auto;
+}
+
+.card {
+  background-color: var(--branco);
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: var(--azul-principal);
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.card p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.imagem-inicio {
+  display: block;
+  width: 80%;
+  height: 300px;
+  object-fit: cover;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+.texto-inicio {
+  text-align: left;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+form,
+input,
+select {
+  width: 100%;
+}
+
+fieldset {
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+legend,
+label {
+  font-weight: bold;
+  color: var(--azul-principal);
+}
+
+label {
+  display: block;
+  margin: 14px 0 6px;
+  text-align: left;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: var(--branco);
+  color: #000;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--azul-principal);
+  outline-offset: 2px;
+}
+
+small {
+  display: block;
+  color: var(--erro);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+button {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 18px;
+}
+
+button:hover {
+  background-color: var(--azul-hover);
+}
+
+.grupo-dia {
+  margin-top: 25px;
+}
+
+.titulo-dia {
+  color: var(--azul-principal);
+  font-size: 22px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--azul-principal);
+  text-align: left;
+}
+
+.lista-treinos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.treino-card {
+  border: 1px solid var(--cinza-borda);
+  border-left: 5px solid var(--azul-principal);
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  text-align: left;
+}
+
+.treino-card h4 {
+  color: var(--azul-principal);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.treino-card p {
+  margin-bottom: 6px;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer-text svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  fieldset {
+    padding: 16px;
+  }
+
+  .imagem-inicio {
+    width: 100%;
+    height: 220px;
+  }
+}
