@@ -6,8 +6,10 @@ export function TreinoProvider({ children }) {
   const [treinos, setTreinos] = useState([]);
 
   function adicionarTreino(novoTreino) {
-    setTreinos([...treinos, novoTreino]);
-  }
+  console.log(novoTreino);
+
+  setTreinos([...treinos, novoTreino]);
+}
 
   function excluirTreino(id) {
     const listaAtualizada = treinos.filter((treino) => treino.id !== id);
