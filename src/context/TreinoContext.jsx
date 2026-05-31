@@ -1,15 +1,25 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const TreinoContext = createContext();
 
 export function TreinoProvider({ children }) {
-  const [treinos, setTreinos] = useState([]);
+  const [treinos, setTreinos] = useState(() => {
+    const treinosSalvos = localStorage.getItem("treinos");
+
+    if (treinosSalvos) {
+      return JSON.parse(treinosSalvos);
+    }
+
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("treinos", JSON.stringify(treinos));
+  }, [treinos]);
 
   function adicionarTreino(novoTreino) {
-  console.log(novoTreino);
-
-  setTreinos([...treinos, novoTreino]);
-}
+    setTreinos([...treinos, novoTreino]);
+  }
 
   function excluirTreino(id) {
     const listaAtualizada = treinos.filter((treino) => treino.id !== id);
