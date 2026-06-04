@@ -47,6 +47,14 @@ function Listagem() {
     setFormEdicao({});
   }
 
+  function confirmarExclusao(id) {
+    const confirmar = window.confirm("Tem certeza que deseja excluir este treino?");
+
+    if (confirmar) {
+      excluirTreino(id);
+    }
+  }
+
   return (
     <section className="card">
       <h2>Listagem de Treinos</h2>
@@ -165,7 +173,7 @@ function Listagem() {
                           <button
                             type="button"
                             className="botao-excluir"
-                            onClick={() => excluirTreino(treino.id)}
+                            onClick={() => confirmarExclusao(treino.id)}
                             aria-label="Excluir treino"
                           >
                             <svg
