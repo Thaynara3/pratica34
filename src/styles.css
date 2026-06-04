@@ -251,6 +251,18 @@ button:hover {
   height: 22px;
 }
 
+.botao-adicionar {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.botao-adicionar:hover {
+  background-color: var(--azul-hover);
+}
+
 .api-section {
   margin-top: 35px;
   padding-top: 25px;

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import pingu from "../assets/pingu.jpg";
 import { buscarExercicios } from "../services/api";
+import { useTreinos } from "../context/TreinoContext";
 
 function Inicio() {
   const [exercicios, setExercicios] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
+
+  const { adicionarTreino } = useTreinos();
 
   useEffect(() => {
     async function carregarExercicios() {
@@ -21,6 +24,19 @@ function Inicio() {
 
     carregarExercicios();
   }, []);
+
+  function adicionarSugestao(exercicio) {
+    const novoTreino = {
+      id: Date.now(),
+      exercicio: exercicio.nome,
+      grupoMuscular: exercicio.grupoMuscular,
+      dia: "Segunda-feira",
+      series: 3,
+      repeticoes: 10,
+    };
+
+    adicionarTreino(novoTreino);
+  }
 
   return (
     <section className="card">
@@ -40,6 +56,7 @@ function Inicio() {
 
       <section className="api-section">
         <h3>Sugestões de exercícios</h3>
+
         <p className="api-descricao">
           Dados carregados de uma API REST local com json-server.
         </p>
@@ -61,6 +78,14 @@ function Inicio() {
                 <p>
                   <strong>Equipamento:</strong> {exercicio.equipamento}
                 </p>
+
+                <button
+                  type="button"
+                  className="botao-adicionar"
+                  onClick={() => adicionarSugestao(exercicio)}
+                >
+                  Adicionar à lista
+                </button>
               </article>
             ))}
           </div>
