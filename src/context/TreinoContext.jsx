@@ -21,6 +21,14 @@ export function TreinoProvider({ children }) {
     setTreinos([...treinos, novoTreino]);
   }
 
+  function editarTreino(id, treinoAtualizado) {
+  const listaAtualizada = treinos.map((treino) =>
+    treino.id === id ? { ...treino, ...treinoAtualizado } : treino
+  );
+
+  setTreinos(listaAtualizada);
+}
+
   function excluirTreino(id) {
     const listaAtualizada = treinos.filter((treino) => treino.id !== id);
     setTreinos(listaAtualizada);
@@ -31,6 +39,7 @@ export function TreinoProvider({ children }) {
       value={{
         treinos,
         adicionarTreino,
+        editarTreino,
         excluirTreino,
       }}
     >
