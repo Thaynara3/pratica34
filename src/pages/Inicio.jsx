@@ -7,6 +7,7 @@ function Inicio() {
   const [exercicios, setExercicios] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
+  const [mensagem, setMensagem] = useState("");
 
   const { adicionarTreino } = useTreinos();
 
@@ -36,6 +37,7 @@ function Inicio() {
     };
 
     adicionarTreino(novoTreino);
+    setMensagem(`${exercicio.nome} foi adicionado à listagem.`);
   }
 
   return (
@@ -60,6 +62,7 @@ function Inicio() {
         <p className="api-descricao">
           Dados carregados de uma API REST local com json-server.
         </p>
+        {mensagem && <p className="mensagem-sucesso">{mensagem}</p>}
 
         {carregando && <p>Carregando exercícios...</p>}
 
