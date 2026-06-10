@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import Menu from "./components/Menu";
 import Inicio from "./pages/Inicio";
 import Cadastro from "./pages/Cadastro";
@@ -25,7 +25,7 @@ function App() {
           <a 
           href="https://github.com/Thaynara3/pratica34"
           target="_blank"
-          rel="nooper noreferrer"
+          rel="noopener noreferrer"
           className="footer-text"
           >
             <svg
