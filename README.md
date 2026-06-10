@@ -7,7 +7,7 @@ Aplicação web desenvolvida em React para cadastro, listagem e organização de
 - React
 - Vite
 - JavaScript
-- React Router DOM
+- React Router
 - Context API
 - CSS
 - json-server
