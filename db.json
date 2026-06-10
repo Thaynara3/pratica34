@@ -1,0 +1,28 @@
+{
+  "exercicios": [
+    {
+      "id": 1,
+      "nome": "Agachamento",
+      "grupoMuscular": "Perna",
+      "equipamento": "Peso corporal"
+    },
+    {
+      "id": 2,
+      "nome": "Supino",
+      "grupoMuscular": "Peito",
+      "equipamento": "Barra"
+    },
+    {
+      "id": 3,
+      "nome": "Elevação lateral",
+      "grupoMuscular": "Ombros",
+      "equipamento": "Halteres"
+    },
+    {
+      "id": 4,
+      "nome": "Remada baixa",
+      "grupoMuscular": "Costas",
+      "equipamento": "Máquina"
+    }
+  ]
+}
